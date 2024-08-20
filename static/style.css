@@ -1,0 +1,468 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #909fa3;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #2f5740;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: #e2e8ec;
+    
+}
+
+#download-brief {
+    background-color: #2ecc71;
+    color: white;
+}
+
+#download-brief:hover {
+    background-color: #27ae60;
+}
+
+
+.sidebar {
+    width: 25%;
+    background-color: #808d99;
+    color: rgb(8, 8, 8);
+    padding: 10px;
+    text-align: left;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    text-indent: 0%;
+}
+
+.sidebar h2 {
+    color: #070707;
+}
+
+.sidebar label, .sidebar select, .sidebar input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    
+}
+#available-options{
+    padding: 0%;
+}
+#custom-inputs{
+    padding: 0%;
+}
+
+#select{
+    /* font-weight: bolder; */
+    font-size: large;
+    padding: 0%;
+}
+
+#select2{
+    /* font-weight: bolder; */
+    font-size: large;
+    padding: 0%;
+}
+
+
+
+#select3{
+    /* font-weight: bolder; */
+    font-size: large;
+    padding: 0%;
+}
+
+#select3{
+    /* font-weight: bolder; */
+    font-size: large;
+    padding: 0%;
+}
+.sidebar button {
+    width: 100%;
+    padding: 10px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    
+
+}
+
+.sidebar button:hover {
+    background-color: #c0392b;
+}
+
+.main-content {
+    flex: 1;
+    padding: 15px;  
+}
+
+.main-content h2{
+    color: #beb9b9;
+}
+.generated-brief {
+    background-color: #e2e8ec;
+    padding: 0%;
+    border-radius: 15px;
+    
+}
+
+/* 
+#brief-output {
+    width: 100%;
+    height: 400px;
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    box-sizing:border-box;
+    overflow:visible;   
+} */
+
+#brief-output {
+    text-decoration:solid;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
+    font-style: normal;
+    font-weight:lighter;
+    
+    width: 100%;
+    height: 400px;
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: visible;
+    resize: both; /* Allows resizing in both directions */
+    min-width: 1000px; 
+    max-width: 100%; 
+    min-height: 350px; 
+    max-height: 500px; 
+    
+}
+
+.brief-actions {
+    display: flex;
+    justify-content:right;
+    margin-top: 0px;
+}
+/* #input-mode {
+    margin-bottom: 20px;
+    padding: 15px;
+    width: 50%;
+    border: #070707;
+} */
+
+
+.brief-actions button {
+    padding: 10px 20px;
+    border: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
+#download-options{
+    background-color: #bacde0;
+    /* cursor: pointer; */
+    border-radius: 5px;
+    /* transition: background-color 0.3s ease; */
+}
+
+/* Styling the dropdown */
+.download-options select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #ce2f2f;
+    margin-right: 10px;
+    /* background-color: #5ad136; */
+    transition: border-color 0.3s ease;
+}
+
+.brief-actions select:hover {
+    border-color: #4CAF50; /* Green border on hover */
+    cursor: pointer;
+
+}
+
+#copy-brief {
+    background-color: #3498db;
+    color: white;
+}
+
+#modify-brief {
+    background-color: #e67e22;
+    color: white;
+}
+
+#copy-brief:hover {
+    background-color: #2980b9;
+}
+
+#modify-brief:hover {
+    background-color: #d35400;
+}
+
+.input_selection{
+    /* border: #070707; */
+    border-color: #070707;
+    /* border-color: #27ae60; */
+    height: 100px;
+    width: 170px;
+    /* border-style: solid; */
+    text-align: center;
+    margin-top: 15px;
+
+
+}
+
+#input-mode-label {
+    margin-left: 10px;
+    color: rgb(7, 7, 7);
+    padding: 0%;
+    font-size: 17px;
+}
+
+
+/* From Uiverse.io by cuzpq */ 
+.theme-checkbox {
+    --toggle-size: 8px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 6.25em;
+    height: 3.125em;
+    background: -webkit-gradient(linear, left top, right top, color-stop(50%, #efefef), color-stop(50%, #2a2a2a)) no-repeat;
+    background: -o-linear-gradient(left, #3a3838 50%, #2a2a2a 50%) no-repeat;
+    background: linear-gradient(to right, #5ad136 50%, #2a2a2a 50%) no-repeat;
+    background-size: 100%;
+    background-position: 0;
+    -webkit-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 99em;
+    position: relative;
+    cursor: pointer;
+    font-size: var(--toggle-size);
+  }
+  
+
+  .theme-checkbox::before {
+    content: "";
+    width: 2.25em;
+    height: 2.25em;
+    position: absolute;
+    top: 0.438em;
+    left: 0.438em;
+    background: -webkit-gradient(linear, left top, right top, color-stop(50%, #efefef), color-stop(50%, #2a2a2a)) no-repeat;
+    background: -o-linear-gradient(left, #444141 50%, #2a2a2a 50%) no-repeat;
+    background: linear-gradient(to right, #efefef 50%, #2a2a2a 50%) no-repeat;
+    background-size: 205%;
+    background-position: 100%;
+    border-radius: 50%;
+    -webkit-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+  }
+  
+  .theme-checkbox:checked::before {
+    left: calc(100% - 2.25em - 0.438em);
+    background-position: 0;
+  }
+  
+  .theme-checkbox:checked {
+    background-position: 100%;
+  }
+
+
+
+/* Optional: Spinner (if needed) */
+@keyframes spinner {
+    to {transform: rotate(360deg);}
+}
+
+.loading-spinner {
+    margin-left: 10px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 3px solid #53be92;
+    border-top-color: #4CAF50;
+    animation: spinner 0.4s linear infinite;
+    display: none; /* Initially hidden */
+}
+
+
+/* CSS for the Generate button's animated dots */
+.dots-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .dot {
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+    border-radius: 10px;
+    background-color: #b3d4fc;
+    animation: pulse 1.5s infinite ease-in-out;
+  }
+  
+  .dot:last-child {
+    margin-right: 0;
+  }
+  
+  .dot:nth-child(1) {
+    animation-delay: -0.3s;
+  }
+  
+  .dot:nth-child(2) {
+    animation-delay: -0.1s;
+  }
+  
+  .dot:nth-child(3) {
+    animation-delay: 0.1s;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(0.8);
+      background-color: #b3d4fc;
+      box-shadow: 0 0 0 0 rgba(178, 212, 252, 0.7);
+    }
+  
+    50% {
+      transform: scale(1.2);
+      background-color: #6793fb;
+      box-shadow: 0 0 0 10px rgba(178, 212, 252, 0);
+    }
+  
+    100% {
+      transform: scale(0.8);
+      background-color: #b3d4fc;
+      box-shadow: 0 0 0 0 rgba(178, 212, 252, 0.7);
+    }
+  }
+  
+  /* Style the Generate button */
+  .generate-button {
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    /* border-radius: 8px; */
+    color: rgb(255, 10, 10);
+  }
+  
+
+/* .history-panel {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #141414;
+    border-radius: 5px;
+    border-style:solid;
+    /* max-width: 200px; */
+    /* max-height: 500px; 
+} */
+
+/* .history-sections {
+    margin-top: 10px;
+}
+
+.history-section {
+    margin-bottom: 10px;
+}
+
+.history-section h4 {
+    margin: 0;
+} */
+/* 
+#generate_color{
+    color: rgb(15, 15, 14);
+} */
+
+#history-sections {
+    display: none;  /* Ensure sections are hidden by default */
+}
+
+
+/* General Styling */
+.history-panel {
+    background-color: #9baec2;
+    border-radius: 8px;
+    padding: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    max-width: 300px;
+
+}
+
+.history-panel h3{
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+/* History Section Styling */
+.history-sections {
+    max-height: 500px;
+    overflow-y: auto;  /* Add vertical scrollbar */
+    padding-right: 10px;
+}
+.history-panel input{
+    width: 80px;
+}
+
+
+.history-section {
+    margin-bottom: 20px;
+}
+
+.history-section h4 {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #070707;
+    border-bottom: 1px solid #494646;
+    padding-bottom: 5px;
+}
+
+.brief-item {
+    font-size: 14px;
+    font-weight: lighter;
+    font-style: normal;
+    background-color: #a5c0db;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.brief-item:hover {
+    background-color: #babbbd;
+}
+
+/* Custom Scrollbar */
+.history-sections::-webkit-scrollbar {
+    width: 8px;
+}
+
+.history-sections::-webkit-scrollbar-track {
+    background: #f0f4f8;
+}
+
+.history-sections::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+}
+
+.history-sections::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+

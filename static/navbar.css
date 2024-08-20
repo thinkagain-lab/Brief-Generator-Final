@@ -1,0 +1,43 @@
+/* Basic styling for the navigation bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px;
+    background-color: #626b4f;
+    color: #fff;
+}
+
+.navbar-left {
+    flex: 1;
+}
+
+.navbar-right {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-button {
+    padding: 8px 15px;
+    color: #fff;
+    background-color: #555;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: #777;
+}
+
+.nav-button:active {
+    background-color: #999;
+}

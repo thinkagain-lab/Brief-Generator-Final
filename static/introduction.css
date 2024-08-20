@@ -1,0 +1,189 @@
+/* CSS Styles */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color:rgb(10, 145, 255);
+}
+
+nav {
+    background-color: #242323;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+header {
+    text-align: center;
+    padding: 100px 0px 0px;
+    background-color: #9bb366;
+    border-bottom: 2px solid #ddd;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header p {
+    margin: 10px 0;
+}
+
+header img {
+    max-width: 100%;
+    height: auto;
+    /* width: 2000px; */
+}
+
+main {
+    padding: 20px;
+    margin-top: 60px;
+}
+
+.intro {
+    margin-bottom: 20px;
+}
+
+.cta {
+    text-align: center;
+}
+
+.cta a {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    background-color: #007bff;
+    border-radius: 5px;
+}
+
+.cta a:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #cdddcf;
+    padding: 10px;
+    text-align: center;
+    border-top: 2px solid #ddd;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+}
+
+footer h1 {
+    margin: 0;
+    color: #a9babb;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+footer p {
+    margin: 5px 0;
+    color: #202422;
+    font-size: 16px;
+    font-weight: bold;
+    /* text-align: left; */
+    
+}
+
+footer a {
+    color: #4788ce;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 10px;
+    font-weight: bold;
+    /* text-align: left; */
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* Button Styles */
+
+.cssbuttons-io-button {
+    background: #a370f0;
+    color: white;
+    font-family: inherit;
+    padding: 0.35em;
+    padding-left: 0.8em;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 0.9em;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    box-shadow: inset 0 0 1.6em -0.6em #714da6;
+    overflow: hidden;
+    position: relative;
+    height: 2.4em;
+    width: auto;
+    padding-right: 2.8em;
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: 0.5em;
+    vertical-align: middle;
+}
+
+.cssbuttons-io-button .icon {
+    background: white;
+    margin-left: 0.8em;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2em;
+    width: 2em;
+    border-radius: 0.7em;
+    box-shadow: 0.1em 0.1em 0.6em 0.2em #7b52b9;
+    right: 0.5em;
+    transition: all 0.3s;
+}
+
+.cssbuttons-io-button:hover .icon {
+    width: calc(100% - 0.6em);
+}
+
+.cssbuttons-io-button .icon svg {
+    width: 1em;
+    transition: transform 0.3s;
+    color: #7b52b9;
+}
+
+.cssbuttons-io-button:hover .icon svg {
+    transform: translateX(0.1em);
+}
+
+.cssbuttons-io-button:active .icon {
+    transform: scale(0.95);
+}

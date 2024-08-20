@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% include "partials/navbar_generator.html" %} 
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<div class="container">
+    <div class="sidebar">
+        
+        <h2><i class="fa-solid fa-book"></i> Generate Brief</h2>
+        
+        <!-- Toggle Switch for Input Mode -->
+        <!-- <label for="input-mode">Select Input Mode:</label> -->
+        <div class="input_selection">
+            <label for="input-mode" id="input-mode-label">Use Custom Input</label> 
+            <input type="checkbox" id="input-mode" name="input_mode" class="theme-checkbox">
+            <!-- <input type="checkbox" id="input-mode" name="input_mode">-->
+        </div>
+        
+        <form id="generate-brief-form" method="POST">
+            <!-- Available Options -->
+            <div id="available-options">
+                <label for="brief-type" id="select">Select Brief Type*</label>
+                <select id="brief-type" name="brief_type">
+                    <option value="">--Select Type--</option>
+                    <option value="Logo">Logo</option>
+                    <option value="Packaging">Packaging</option>
+                    <option value="Banner">Banner</option>
+                    <option value="Website">Website</option>
+                    <option value="Illustration">Illustration</option>
+
+                    
+
+                    <!-- Add more options as needed -->
+                </select>
+                <label for="domain" id="select2">Select Domain*</label>
+                <select id="domain" name="domain">
+                    <option value="">--Select Domain--</option>
+                    <option value="Education">Education</option>
+                    <option value="Technology">Technology</option>
+                    <option value="Food industry">Food Industry</option>
+                    <option value="Retail Store">Retail Store</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Fashion">Fashion</option>
+                    <option value="Sports">Sports</option>
+                    <option value="Transportation">Transportation</option>
+                    <option value="Real State">Real State</option>
+                    <option value="Travel">Travel</option>
+
+                    <!-- Add more options as needed -->
+                </select>
+            </div>
+
+            <!-- Custom Input Fields -->
+            <div id="custom-inputs" style="display: none;">
+                <label for="custom-brief-type" id="select3">Enter Custom Brief Type*</label>
+                <input type="text" id="custom-brief-type" name="custom_brief_type" placeholder="Eg. Logo,Banner etc">
+                <label for="custom-domain" id="select3">Enter Custom Domain*</label>
+                <input type="text" id="custom-domain" name="custom_domain" placeholder="Eg. Food,Tech,Sports etc">
+            </div>
+            <button type="submit" class="generate-button">Generate</button>
+
+        </form>
+
+        {% if current_user.is_authenticated %}
+    <!-- History Panel -->
+    <div class="history-panel" id="history-panel">
+        <h3> View History</h3>
+        
+        <!-- Toggle Button -->
+        <input type="checkbox" class="theme-checkbox" id="toggle-history">
+        
+        <div class="history-sections" id="history-sections">
+            <div class="history-section" id="history-today">
+                <h4>Today</h4>
+                <!-- History items will be dynamically added here -->
+            </div>
+            <div class="history-section" id="history-yesterday">
+                <h4>Yesterday</h4>
+                <!-- History items will be dynamically added here -->
+            </div>
+            <div class="history-section" id="history-week">
+                <h4>Past Week</h4>
+                <!-- History items will be dynamically added here -->
+            </div>
+            <div class="history-section" id="history-month">
+                <h4>Past Month</h4>
+                <!-- History items will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+    
+
+    </div>
+    <div class="main-content">
+        <h2><i class="fa-solid fa-book"></i> Generated Brief</h2>
+        <div id="generated-brief" class="generated-brief">
+            <textarea id="brief-output" rows="10" readonly>{{ content }}</textarea>
+            <div class="brief-actions">
+                
+                <button id="copy-brief"><i class="fa-solid fa-copy"> </i> Copy Brief</button>
+                
+                <button id="modify-brief"><i class="fa-solid fa-hammer"></i> Modify Brief</button>
+
+                <!-- Dropdown for Download Options -->
+                <select id="download-options">
+                    <option  value="text" >Download as Text</option >
+                    <option value="pdf">Download as PDF</option>
+                    <option value="image" onclick="downloadImage()" >Download as Image</option>
+                </select>
+                
+                <button id="download-brief"><i class="fa-solid fa-download"></i> Download Brief</button>
+                <div id="loading-spinner" class="loading-spinner"></div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="{{ url_for('static', filename='download.js') }}"></script>
+
+{% endblock %}

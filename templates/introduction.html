@@ -1,0 +1,64 @@
+{% include "partials/navbar.html" %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Brief Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='introduction.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <!-- Navigation Bar -->
+
+
+     <!-- <nav>
+        <ul>
+             <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('signup') }}">Sign Up</a></li> 
+            <li><a href="{{ url_for('login') }}">Log In</a></li> 
+        </ul> 
+    </nav>
+     -->
+    <header>
+        <h1>Welcome to Brief Generator</h1>
+        <p>Your ultimate tool for creating professional briefs effortlessly.</p>
+        <img src="{{ url_for('static', filename='image.png') }}" alt="Brief Generator">
+    </header>
+    
+    <main>
+        <section class="intro">
+            <h2>What We Offer</h2>
+            <p>Our application provides an intuitive and easy-to-use platform for generating comprehensive briefs. Whether you're a professional or just starting, our tool will help you craft precise and clear briefs for any purpose.</p>
+            <p>Sign up today to get started or log in to access your account. If you prefer, you can also try our generator as a guest without creating an account (Use generator if already logged in...).</p>
+            {% if current_user.is_authenticated %}
+
+            {%else %}
+            <a href="{{ url_for('guest_home') }}" class="cssbuttons-io-button">
+            <i class="fa-solid fa-user-check">
+                
+                Try as Guest
+            </i>
+                <div class="icon">
+                    <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor"></path>
+                    </svg>
+                </div>
+            </a>
+            
+            {% endif %}
+        </section>
+    </main>
+    
+    <footer>
+        <h2>Contact Us</h2>
+        <p>Name: Salman Faizi</p>
+        <p>Email: salmanfaizi.tal@gmail.com</p>
+        <p>Contact: 9502250076</p>
+        <!-- <p><a href="{{ url_for('index') }}">Return to HomePage</a></p> -->
+    </footer>
+</body>
+</html>

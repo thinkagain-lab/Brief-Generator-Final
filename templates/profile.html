@@ -1,0 +1,62 @@
+<!-- profile.html -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+{% include "partials/navbar.html" %}
+{% extends "base.html" %}
+{% block content %}
+<div class="profile-page">
+         <h1  id="user_profile" >
+            <i class="fa-solid fa-user-large"></i>
+            User Profile</h1>
+     
+    <div id="image_div">
+        
+        <img src="{{ image_file }}" alt="Profile Picture" class="profile-picture">
+        
+    </div>
+
+    <form method="POST" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <div class="form-row">
+            <div class="form-group">
+                <i class="fa-solid fa-user"></i>
+                {{ form.username.label }}<br>
+                {{ form.username(class="form-control", readonly=True) }}
+            </div>
+            <div class="form-group">
+                <i class="fa-solid fa-at"></i>
+                {{ form.email.label }}<br>
+                {{ form.email(class="form-control", readonly=True) }}
+            </div>
+            <div class="form-group">
+                <i class="fa-regular fa-circle-user"></i>
+                {{ form.name.label }}<br>
+                {{ form.name(class="form-control") }}
+            </div>
+        </div>
+        <div class="form-group" id="edit">
+            <i class="fa-solid fa-address-card"></i>
+            {{ form.bio.label }}<br>
+            {{ form.bio(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.picture.label }}<br>
+            <label class="custom-file-label" for="picture">
+                <i class="fas fa-upload"></i> Upload File
+            </label>
+            {{ form.picture(class="custom-file-input", id="picture") }}
+        </div>
+        <!-- <div class="form-group">
+            <label for="picture"></label>
+            <input type="file" class="custom-file-input" id="picture" name="picture">
+            <label class="custom-file-label" for="picture">
+                <i class="fas fa-upload"></i> Upload File
+            </label>
+        </div> -->
+        
+        <div class="form-group">
+            {{ form.submit(class="btn btn-primary") }}
+        </div>
+    </form>
+</div>
+<script src="{{ url_for('static', filename='profile.js') }}"></script>
+{% endblock %}

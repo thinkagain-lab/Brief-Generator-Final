@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Expired</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='introduction.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Session Expired</h1>
+    </header>
+    
+    <main>
+        <p>Your session has expired. Please <a href="{{ url_for('index') }}">return to the homepage</a> to start a new session or <a href="{{ url_for('signup') }}">sign up</a> to continue as a registered user.</p>
+    </main>
+</body>
+</html>

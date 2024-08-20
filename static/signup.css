@@ -1,0 +1,114 @@
+
+body{
+
+  background-color: #d6cbcb;
+}
+/* From Uiverse.io by alexruix */
+.form-box {
+    max-width: 450px;
+    background: #ebe3e3;
+    padding: 100px;
+    overflow: hidden;
+    border-radius: 20px;
+    color: #010101;
+    margin: 0 auto; /* Center the form box */
+  }
+  
+  .form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 24px 24px;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  /* Form text */
+  .title {
+    font-weight: bold;
+    font-size: 1.6rem;
+    font-size: 35px;
+    margin-bottom: 10px;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+    color: #333131;
+  }
+  
+  /* Inputs box */
+  .form-container {
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #d6cbcb;
+    margin: 1rem 0 .5rem;
+    width: 100%;
+    
+  }
+  
+  .input {
+    background: none;
+    border: 0;
+    outline: 10;
+    height: 40px;
+    width: 90%;
+    border-bottom: 1px solid #eee;
+    font-size: .9rem;
+    padding: 8px 15px;
+  }
+  
+  .form-section {
+    padding: 16px;
+    font-size: .85rem;
+    background-color: #ebe3e3;
+    box-shadow: rgba(206, 200, 200, 0.08) 0 -1px;
+  }
+  
+  .form-section a {
+    font-weight: bold;
+    color: #2f352e;
+    transition: color .3s ease;
+  }
+  
+  .form-section a:hover {
+    color: #005ce6;
+    text-decoration: underline;
+  }
+  
+  /* Button */
+  .form button {
+    background-color: #777d85;
+    color: #fff;
+    border: 0;
+    border-radius: 24px;
+    padding: 10px 0px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color .3s ease;
+  }
+  
+  .form button:hover {
+    background-color: #005ce6;
+  }
+  
+
+  .flash-container {
+    margin: 20px 0;
+}
+
+.flash-message {
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.flash-warning {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.flash-success {
+    background-color: #d4edda;
+    color: #155724;
+}

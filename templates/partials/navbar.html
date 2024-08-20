@@ -1,0 +1,40 @@
+<!-- templates/partials/navbar.html -->
+<nav class="navbar">
+    <div class="navbar-left">
+        <a href="{{ url_for('index') }}" class="nav-logo">Design Brief Generator</a>
+    </div>
+    <div class="navbar-right">
+        
+        <a href="{{ url_for('index') }}" class="nav-button"> <i class="fa-solid fa-house"></i> Home</a>
+        {% if current_user.is_authenticated %}
+            <a href="{{ url_for('logout') }}" class="nav-button"> <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
+            <a href="{{ url_for('home') }}" class="nav-button"><i class="fa-solid fa-book"></i> Brief Generator</a>
+
+            <!-- {% if not on_profile_page %}
+
+            <a class="nav-link" href="{{ url_for('profile') }}">Profile</a>
+
+            {% endif %} -->
+            
+            <a href="{{ url_for('profile') }}" class="nav-button"> <i class="fa-solid fa-user"></i> Profile</a>
+
+        {% elif 'start_time' in session %}
+            <!-- If it's a guest session -->
+            
+            <a href="{{ url_for('signup') }}" class="nav-button"><i class="fa-solid fa-user-plus"></i> Sign Up</a>
+            
+        {% else %}
+        
+            <a href="{{ url_for('login') }}" class="nav-button"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+            
+            <a href="{{ url_for('signup') }}" class="nav-button"><i class="fa-solid fa-user-plus"></i> Sign Up</a></i>
+            
+            <a href="{{ url_for('guest_home') }}" class="nav-button"><i class="fa-solid fa-user-check"></i> Try as a guest</a>
+        </i>
+        {% endif %}
+
+
+
+
+    </div>
+</nav>
