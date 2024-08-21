@@ -79,9 +79,9 @@ def index():
 # def login_redirect():
 #     return render_template('index.html')
 
-@app.route('/contact')
-def contact():
-    return render_template('contact.html')
+# @app.route('/contact')
+# def contact():
+#     return render_template('contact.html')
 
 
 
