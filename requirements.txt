@@ -1,4 +1,5 @@
 flask
+gunicorn
 langchain
 sqlalchemy
 flask_bcrypt
