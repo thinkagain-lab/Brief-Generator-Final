@@ -10,6 +10,7 @@ import pytz
 from forms import UpdateProfileForm
 from flask_migrate import Migrate
 from flask import jsonify
+import os
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -20,7 +21,11 @@ bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///brief_generator.db'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///brief_generator.db'
+
+
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///brief_generator.db')
+
 # db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 

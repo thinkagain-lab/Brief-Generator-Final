@@ -11,3 +11,4 @@ pytz
 jsonify
 pillow
 python-dotenv
+psycopg2-binary
