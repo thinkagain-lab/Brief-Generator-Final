@@ -20,7 +20,7 @@ bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///brief_generator.db'
 # db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
@@ -153,6 +153,7 @@ def home():
         else:
             brief_type = request.form.get('brief_type') or request.form.get('custom_brief_type')
             domain = request.form.get('domain') or request.form.get('custom_domain')
+            print(brief_type,domain)
             content = generate_brief(brief_type, domain)
             brief = Brief(type=brief_type, domain=domain, content=content, author=current_user)
             db.session.add(brief)
@@ -264,7 +265,4 @@ def profile():
 
 
 
-if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()
-    app.run(debug=True)
+

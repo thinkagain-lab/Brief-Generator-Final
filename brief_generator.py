@@ -18,12 +18,22 @@ def get_current_datetime():
 
 def generate_brief(brief_type, domain):
 
-    import os
     from langchain_core.prompts import ChatPromptTemplate
     from langchain_groq import ChatGroq
 
+    from dotenv import load_dotenv
+    import os
 
-    os.environ['GROQ_API_KEY']=os.getenv("GROQ_API_KEY")
+    # Load the .env file
+    load_dotenv()
+
+    api_key = os.getenv("GROQ_API_KEY")
+    if api_key is None:
+        raise ValueError("API is not working properly... We're really sorry for the inconvineince ")
+    os.environ['GROQ_API_KEY'] = api_key
+
+
+    # os.environ['GROQ_API_KEY']=os.getenv("GROQ_API_KEY")
     chat = ChatGroq(temperature=0.5, model_name="mixtral-8x7b-32768")
     # Example usage
     current_datetime = get_current_datetime()
