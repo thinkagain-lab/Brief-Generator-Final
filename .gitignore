@@ -1,3 +1,4 @@
-.env
+.env/
 __pycache__/
 instance/
+database_view.py/
